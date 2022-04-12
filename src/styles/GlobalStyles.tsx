@@ -27,10 +27,15 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    border: unset;
+
   }
 
   input {
-    outline: unset;
     border: unset;
+  }
+
+  input:focus {
+    outline: unset;
   }
 `

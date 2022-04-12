@@ -11,5 +11,10 @@ import * as S from './styles'
  */
 
 export const Home = () => {
-  return <S.Conteiner></S.Conteiner>
+  return (
+    <S.Conteiner>
+      <S.Banner></S.Banner>
+      <S.Carrousel></S.Carrousel>
+    </S.Conteiner>
+  )
 }
