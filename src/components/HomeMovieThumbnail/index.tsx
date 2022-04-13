@@ -1,4 +1,10 @@
+import { MouseEventHandler } from 'react'
 import * as S from './styles'
+
+interface PropTypes {
+  name: string
+  onClick: MouseEventHandler<HTMLDivElement>
+}
 
 /**
  * Archive: src/pages/Login/index.tsx
@@ -10,6 +16,6 @@ import * as S from './styles'
  * Author: Rey
  */
 
-export const HomeMovieThumbnail = () => {
-  return <S.Conteiner></S.Conteiner>
+export const HomeMovieThumbnail = ({ name, onClick }: PropTypes) => {
+  return <S.Conteiner name={name} onClick={onClick}></S.Conteiner>
 }
