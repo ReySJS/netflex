@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CommonButton } from '../../components/CommonButton'
 import { CommonInput } from '../../components/CommonInput'
@@ -5,12 +6,6 @@ import { CommonInput } from '../../components/CommonInput'
 import { useUser } from '../../providers/UserProvider'
 
 import * as S from './styles'
-
-interface handleSubmitTypes {
-  name: string
-  password: string
-  preventDefault: any
-}
 
 /**
  * Archive: src/pages/Login/index.tsx
@@ -24,34 +19,37 @@ interface handleSubmitTypes {
 
 export const Login = () => {
   const navigate = useNavigate()
-  const { user } = useUser()
+  const { user, login } = useUser()
 
-  const handleSubmit = ({
-    preventDefault,
-    name,
-    password,
-  }: handleSubmitTypes) => {
-    preventDefault()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-    console.log(name, password)
+  const handleSubmit = () => {
+    if (login) {
+      login({ email, password })
+    }
   }
 
   return (
     <S.Conteiner>
-      <S.Form onSubmit={(e) => handleSubmit(e)}>
-        <S.FormTitle>Entrar</S.FormTitle>
+      <S.Form>
+        <S.FormTitle>Entrar - {user?.email}</S.FormTitle>
         <CommonInput
           placeholder="Digite seu email"
           mode="dark"
           type="email"
           name="email"
+          onBlur={(e) => setEmail(e.target.value)}
         />
         <CommonInput
           placeholder="Digite sua senha"
           type="password"
           name="password"
+          onBlur={(e) => setPassword(e.target.value)}
         />
-        <CommonButton type="submit">Entrar</CommonButton>
+        <CommonButton type="button" onClick={handleSubmit}>
+          Entrar
+        </CommonButton>
       </S.Form>
     </S.Conteiner>
   )

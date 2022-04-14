@@ -1,3 +1,4 @@
+import { FocusEventHandler } from 'react'
 import * as S from './styles'
 
 interface PropTypes {
@@ -5,6 +6,7 @@ interface PropTypes {
   mode?: string
   type: string
   name: string
+  onBlur: FocusEventHandler<HTMLInputElement>
 }
 
 /**
@@ -17,8 +19,20 @@ interface PropTypes {
  * Author: Rey
  */
 
-export const CommonInput = ({ placeholder, mode, type, name }: PropTypes) => {
+export const CommonInput = ({
+  placeholder,
+  mode,
+  type,
+  name,
+  onBlur,
+}: PropTypes) => {
   return (
-    <S.Input placeholder={placeholder} mode={mode} type={type} name={name} />
+    <S.Input
+      placeholder={placeholder}
+      mode={mode}
+      type={type}
+      name={name}
+      onBlur={onBlur}
+    />
   )
 }
