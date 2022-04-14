@@ -13,7 +13,7 @@ export const Conteiner = styled.section`
   background-size: cover;
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
   width: 500px;
   height: 500px;
   max-width: 600px;

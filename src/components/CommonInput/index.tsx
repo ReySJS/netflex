@@ -4,6 +4,7 @@ interface PropTypes {
   placeholder: string
   mode?: string
   type: string
+  name: string
 }
 
 /**
@@ -16,6 +17,8 @@ interface PropTypes {
  * Author: Rey
  */
 
-export const CommonInput = ({ placeholder, mode, type }: PropTypes) => {
-  return <S.Input placeholder={placeholder} mode={mode} type={type} />
+export const CommonInput = ({ placeholder, mode, type, name }: PropTypes) => {
+  return (
+    <S.Input placeholder={placeholder} mode={mode} type={type} name={name} />
+  )
 }
