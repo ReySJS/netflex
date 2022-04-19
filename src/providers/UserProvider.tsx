@@ -1,4 +1,10 @@
-import { useState, useContext, createContext, ReactNode } from 'react'
+import {
+  useState,
+  useContext,
+  createContext,
+  ReactNode,
+  useEffect,
+} from 'react'
 
 interface ContextTypes {
   user: UserTypes
@@ -29,11 +35,21 @@ export const UserProvider = ({ children }: UserProviderTypes) => {
 
   const login = ({ email, password }: LoginTypes) => {
     setUser({ email, password })
+
+    localStorage.setItem('user', JSON.stringify({ email, password }))
   }
 
   const logout = () => {
     setUser(undefined)
   }
+
+  useEffect(() => {
+    const getUser = localStorage.getItem('user')
+    if (getUser && getUser !== null) {
+      const loggedUser = JSON.parse(getUser)
+      login(loggedUser)
+    }
+  }, [])
 
   return (
     <UserContext.Provider
