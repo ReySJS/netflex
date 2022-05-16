@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react'
-import { HomeMovieThumbnail } from '../../components/HomeMovieThumbnail'
-import { api } from '../../services/api'
+import { useEffect, useState } from 'react';
+import { HomeMovieThumbnail } from '../../components/HomeMovieThumbnail';
+import { api } from '../../services/api';
 
-import * as S from './styles'
+import * as S from './styles';
 
 interface HandleMovieTypes {
-  name: string
-  title: string
-  subtitle: string
+  name: string;
+  title: string;
+  subtitle: string;
 }
 
 interface MovieTypes {
-  name: string
-  title: string
-  subtitle: string
+  name: string;
+  title: string;
+  subtitle: string;
 }
 
 /**
@@ -27,27 +27,27 @@ interface MovieTypes {
  */
 
 export const Home = () => {
-  const [movies, setMovies] = useState<MovieTypes[]>([])
-  const [selectedMovie, setSelectedMovie] = useState('')
-  const [movieTitle, setMovieTitle] = useState('(DES)ENCANTO')
+  const [movies, setMovies] = useState<MovieTypes[]>([]);
+  const [selectedMovie, setSelectedMovie] = useState('');
+  const [movieTitle, setMovieTitle] = useState('(DES)ENCANTO');
   const [movieSubtitle, setMovieSubtitle] = useState(
     'Toda princesa tem seus deveres, mas ela quer mesmo é encher a cara. E com um elfo e um demônio como parceiros, levar o rei à loucura será uma tarefa fácil.',
-  )
+  );
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await api.get('/movies')
-      setMovies(data)
-      console.log(data)
-    }
-    getData()
-  }, [])
+      const { data } = await api.get('/movies');
+      setMovies(data);
+      console.log(data);
+    };
+    getData();
+  }, []);
 
   const handleMovie = ({ name, title, subtitle }: HandleMovieTypes) => {
-    setSelectedMovie(name)
-    setMovieTitle(title)
-    setMovieSubtitle(subtitle)
-  }
+    setSelectedMovie(name);
+    setMovieTitle(title);
+    setMovieSubtitle(subtitle);
+  };
 
   return (
     <S.Conteiner>
@@ -74,5 +74,5 @@ export const Home = () => {
         ))}
       </S.Carrousel>
     </S.Conteiner>
-  )
-}
+  );
+};

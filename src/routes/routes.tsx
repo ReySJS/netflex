@@ -1,34 +1,34 @@
-import { ReactElement } from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { ReactElement } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
-import { useUser } from '../providers/UserProvider'
+import { useUser } from '../providers/UserProvider';
 
-import { Login } from '../pages/Login'
-import { Home } from '../pages/Home'
+import { Login } from '../pages/Login';
+import { Home } from '../pages/Home';
 
 interface PrivateTypes {
-  children: ReactElement
+  children: ReactElement;
 }
 
 const Private = ({ children }: PrivateTypes) => {
-  const { user } = useUser()
+  const { user } = useUser();
 
   if (!user) {
-    return <Navigate to="/login" />
+    return <Navigate to="/login" />;
   }
 
-  return children
-}
+  return children;
+};
 
 const Public = ({ children }: PrivateTypes) => {
-  const { user } = useUser()
+  const { user } = useUser();
 
   if (user) {
-    return <Navigate to="/home" />
+    return <Navigate to="/home" />;
   }
 
-  return children
-}
+  return children;
+};
 
 export const Router = () => (
   <Routes>
@@ -49,5 +49,6 @@ export const Router = () => (
         </Private>
       }
     />
+    <Route path="*" element={<h1>Error 404</h1>} />
   </Routes>
-)
+);

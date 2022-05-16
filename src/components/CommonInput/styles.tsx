@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 interface ConteinerTypes {
-  mode?: string
+  mode?: string;
 }
 
 export const Input = styled.input<ConteinerTypes>`
@@ -32,4 +32,4 @@ export const Input = styled.input<ConteinerTypes>`
     color: #808080;
     }
     `}
-`
+`;

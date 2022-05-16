@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { CommonButton } from '../../components/CommonButton'
-import { CommonInput } from '../../components/CommonInput'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CommonButton } from '../../components/CommonButton';
+import { CommonInput } from '../../components/CommonInput';
 
-import { useUser } from '../../providers/UserProvider'
+import { useUser } from '../../providers/UserProvider';
 
-import * as S from './styles'
+import * as S from './styles';
 
 /**
  * Archive: src/pages/Login/index.tsx
@@ -18,17 +18,16 @@ import * as S from './styles'
  */
 
 export const Login = () => {
-  const navigate = useNavigate()
-  const { user, login } = useUser()
+  const { user, login } = useUser();
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = () => {
     if (login) {
-      login({ email, password })
+      login({ email, password });
     }
-  }
+  };
 
   return (
     <S.Conteiner>
@@ -39,18 +38,18 @@ export const Login = () => {
           mode="dark"
           type="email"
           name="email"
-          onBlur={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <CommonInput
           placeholder="Digite sua senha"
           type="password"
           name="password"
-          onBlur={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <CommonButton type="button" onClick={handleSubmit}>
           Entrar
         </CommonButton>
       </S.Form>
     </S.Conteiner>
-  )
-}
+  );
+};

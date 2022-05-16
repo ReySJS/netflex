@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Conteiner = styled.button`
   height: 50px;
@@ -6,4 +6,4 @@ export const Conteiner = styled.button`
   background-color: #e50914;
 
   color: #fff;
-`
+`;

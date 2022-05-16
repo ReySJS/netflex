@@ -1,11 +1,11 @@
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react';
 
-import * as S from './styles'
+import * as S from './styles';
 
 interface PropTypes {
-  children: string
-  onClick?: MouseEventHandler<HTMLButtonElement>
-  type: 'submit' | 'button' | 'reset' | undefined
+  children: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  type: 'submit' | 'button' | 'reset' | undefined;
 }
 
 /**
@@ -23,5 +23,5 @@ export const CommonButton = ({ onClick, children, type }: PropTypes) => {
     <S.Conteiner onClick={onClick} type={type}>
       {children}
     </S.Conteiner>
-  )
-}
+  );
+};
