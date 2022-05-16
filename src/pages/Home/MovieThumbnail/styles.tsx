@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-import AdamThumb from '../../assets/images/adam_project-thumbnail-background.png';
-import MatrixThumb from '../../assets/images/matrix-thumbnail-background.png';
-import LokiThumb from '../../assets/images/loki-thumbnail-background.png';
-import BatmanThumb from '../../assets/images/the_batman-thumbnail-background.png';
+import AdamThumb from '../../../assets/images/adam_project-thumbnail-background.png';
+import MatrixThumb from '../../../assets/images/matrix-thumbnail-background.png';
+import LokiThumb from '../../../assets/images/loki-thumbnail-background.png';
+import BatmanThumb from '../../../assets/images/the_batman-thumbnail-background.png';
 
-interface ConteinerTypes {
+interface ContainerTypes {
   name: string;
 }
 
-export const Conteiner = styled.div<ConteinerTypes>`
+export const Container = styled.div<ContainerTypes>`
   width: 312px;
   height: 180px;
   cursor: pointer;

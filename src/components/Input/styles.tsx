@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-interface ConteinerTypes {
+interface ContainerTypes {
   mode?: string;
 }
 
-export const Input = styled.input<ConteinerTypes>`
+export const Input = styled.input<ContainerTypes>`
   height: 50px;
   width: 300px;
   padding-left: 30px;

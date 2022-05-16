@@ -10,16 +10,16 @@ interface PropTypes {
 }
 
 /**
- * Archive: src/pages/Commonnput/index.tsx
+ * Archive: src/components/Input/index.tsx
  *
- * Description: Login page
+ * Description: Input components
  *
  * Date: 2021/04/11
  *
  * Author: Rey
  */
 
-export const CommonInput = ({
+export const Input = ({
   placeholder,
   mode,
   type,

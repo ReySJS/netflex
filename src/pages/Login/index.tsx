@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CommonButton } from '../../components/CommonButton';
-import { CommonInput } from '../../components/CommonInput';
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 
 import { useUser } from '../../providers/UserProvider';
 
@@ -30,26 +30,26 @@ export const Login = () => {
   };
 
   return (
-    <S.Conteiner>
+    <S.Container>
       <S.Form>
         <S.FormTitle>Entrar - {user?.email}</S.FormTitle>
-        <CommonInput
+        <Input
           placeholder="Digite seu email"
           mode="dark"
           type="email"
           name="email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <CommonInput
+        <Input
           placeholder="Digite sua senha"
           type="password"
           name="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <CommonButton type="button" onClick={handleSubmit}>
+        <Button type="button" onClick={handleSubmit}>
           Entrar
-        </CommonButton>
+        </Button>
       </S.Form>
-    </S.Conteiner>
+    </S.Container>
   );
 };

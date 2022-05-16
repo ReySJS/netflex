@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { HomeMovieThumbnail } from '../../components/HomeMovieThumbnail';
+import { HomeMovieThumbnail } from './MovieThumbnail';
 import { api } from '../../services/api';
 
 import * as S from './styles';
@@ -50,7 +50,7 @@ export const Home = () => {
   };
 
   return (
-    <S.Conteiner>
+    <S.Container>
       <S.Banner name={selectedMovie}>
         <S.Title>{movieTitle}</S.Title>
         <S.Subtitle>{movieSubtitle}</S.Subtitle>
@@ -73,6 +73,6 @@ export const Home = () => {
           />
         ))}
       </S.Carrousel>
-    </S.Conteiner>
+    </S.Container>
   );
 };

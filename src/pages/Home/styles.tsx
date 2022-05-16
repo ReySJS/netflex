@@ -6,7 +6,7 @@ import MatrixBanner from '../../assets/images/matrix-banner-background.png';
 import LokiBanner from '../../assets/images/loki-banner-background.png';
 import BatmanBanner from '../../assets/images/the_batman-banner-background.png';
 
-export const Conteiner = styled.section`
+export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -15,11 +15,11 @@ export const Conteiner = styled.section`
   align-items: center;
 `;
 
-interface ConteinerTypes {
+interface ContainerTypes {
   name: string;
 }
 
-export const Banner = styled.div<ConteinerTypes>`
+export const Banner = styled.div<ContainerTypes>`
   width: 100vw;
   height: 70vh;
   display: flex;

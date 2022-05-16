@@ -9,19 +9,19 @@ interface PropTypes {
 }
 
 /**
- * Archive: src/pages/Commonnput/index.tsx
+ * Archive: src/components/Button/index.tsx
  *
- * Description: Login page
+ * Description: Button components
  *
  * Date: 2021/04/11
  *
  * Author: Rey
  */
 
-export const CommonButton = ({ onClick, children, type }: PropTypes) => {
+export const Button = ({ onClick, children, type }: PropTypes) => {
   return (
-    <S.Conteiner onClick={onClick} type={type}>
+    <S.Container onClick={onClick} type={type}>
       {children}
-    </S.Conteiner>
+    </S.Container>
   );
 };

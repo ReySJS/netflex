@@ -17,5 +17,5 @@ interface PropTypes {
  */
 
 export const HomeMovieThumbnail = ({ name, onClick }: PropTypes) => {
-  return <S.Conteiner name={name} onClick={onClick}></S.Conteiner>;
+  return <S.Container name={name} onClick={onClick}></S.Container>;
 };

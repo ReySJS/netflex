@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import BackgroundLogin from '../../assets/images/login-background.png';
 
-export const Conteiner = styled.section`
+export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
