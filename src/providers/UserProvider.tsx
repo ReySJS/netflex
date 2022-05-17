@@ -7,14 +7,15 @@ import {
 } from 'react';
 
 interface ContextTypes {
-  user: UserTypes;
+  user: UserTypes | null;
   loading: boolean;
-  login: (value: { email: string; password: string }) => void;
+  login?: (value: { email: string; password: string }) => void;
   logout?: () => void;
 }
 
-export const UserContext = createContext<Partial<ContextTypes>>({
-  login: () => '',
+export const UserContext = createContext<ContextTypes>({
+  user: null,
+  loading: false,
 });
 
 interface UserProviderTypes {
@@ -32,18 +33,16 @@ interface UserTypes {
 }
 
 export const UserProvider = ({ children }: UserProviderTypes) => {
-  const [user, setUser] = useState<UserTypes | undefined>();
+  const [user, setUser] = useState<UserTypes | null>(null);
   const [loading, setLoading] = useState(false);
 
   const login = ({ email, password }: LoginTypes) => {
     setUser({ email, password });
-
-    console.log({ email, password });
     localStorage.setItem('user', JSON.stringify({ email, password }));
   };
 
   const logout = () => {
-    setUser(undefined);
+    setUser(null);
   };
 
   useEffect(() => {

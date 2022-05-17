@@ -31,5 +31,5 @@ export const Input = styled.input<ContainerTypes>`
     ::placeholder {
     color: #808080;
     }
-    `}
+  `}
 `;

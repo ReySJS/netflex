@@ -27,6 +27,7 @@ interface MovieTypes {
  */
 
 export const Home = () => {
+  const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState<MovieTypes[]>([]);
   const [selectedMovie, setSelectedMovie] = useState('');
   const [movieTitle, setMovieTitle] = useState('(DES)ENCANTO');
@@ -35,12 +36,19 @@ export const Home = () => {
   );
 
   useEffect(() => {
-    const getData = async () => {
-      const { data } = await api.get('/movies');
-      setMovies(data);
-      console.log(data);
-    };
-    getData();
+    try {
+      (async () => {
+        setLoading(true);
+        const { data } = await api.get('/movies');
+        setMovies(data);
+        console.log(data);
+        setTimeout(() => {
+          setLoading(false);
+        }, 3000);
+      })();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const handleMovie = ({ name, title, subtitle }: HandleMovieTypes) => {
@@ -54,25 +62,26 @@ export const Home = () => {
       <S.Banner name={selectedMovie}>
         <S.Title>{movieTitle}</S.Title>
         <S.Subtitle>{movieSubtitle}</S.Subtitle>
-        <button onClick={() => setSelectedMovie('reload')}>Recarregar</button>
       </S.Banner>
-
-      <S.Carrousel>
-        <S.PageTitle>Minha Lista</S.PageTitle>
-
-        {movies.map((movie) => (
-          <HomeMovieThumbnail
-            name={movie.name}
-            onClick={() =>
-              handleMovie({
-                name: movie.name,
-                title: movie.title,
-                subtitle: movie.subtitle,
-              })
-            }
-          />
-        ))}
-      </S.Carrousel>
+      {loading ? (
+        <h1>Carregando...</h1>
+      ) : (
+        <S.Carrousel>
+          {movies.map((movie) => (
+            <HomeMovieThumbnail
+              name={movie.name}
+              onClick={() =>
+                handleMovie({
+                  name: movie.name,
+                  title: movie.title,
+                  subtitle: movie.subtitle,
+                })
+              }
+            />
+          ))}
+          <S.PageTitle>Minha Lista</S.PageTitle>
+        </S.Carrousel>
+      )}
     </S.Container>
   );
 };
