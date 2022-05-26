@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { HomeMovieThumbnail } from './MovieThumbnail';
 import { api } from '../../services/api';
 
@@ -27,6 +28,7 @@ interface MovieTypes {
  */
 
 export const Home = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState<MovieTypes[]>([]);
   const [selectedMovie, setSelectedMovie] = useState('');
@@ -62,6 +64,7 @@ export const Home = () => {
       <S.Banner name={selectedMovie}>
         <S.Title>{movieTitle}</S.Title>
         <S.Subtitle>{movieSubtitle}</S.Subtitle>
+        <button onClick={() => navigate('/profile')}>Perfil</button>
       </S.Banner>
       {loading ? (
         <h1>Carregando...</h1>

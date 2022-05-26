@@ -6,7 +6,8 @@ interface PropTypes {
   mode?: string;
   type: string;
   name: string;
-  onChange: FocusEventHandler<HTMLInputElement>;
+  onChange?: FocusEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
 }
 
 /**
@@ -25,14 +26,16 @@ export const Input = ({
   type,
   name,
   onChange,
+  onBlur,
 }: PropTypes) => {
   return (
-    <S.Input
+    <S.Container
       placeholder={placeholder}
       mode={mode}
       type={type}
       name={name}
       onChange={onChange}
+      onBlur={onBlur}
     />
   );
 };

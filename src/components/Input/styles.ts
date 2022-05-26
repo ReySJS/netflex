@@ -4,7 +4,7 @@ interface ContainerTypes {
   mode?: string;
 }
 
-export const Input = styled.input<ContainerTypes>`
+export const Container = styled.input<ContainerTypes>`
   height: 50px;
   width: 300px;
   padding-left: 30px;
@@ -27,7 +27,7 @@ export const Input = styled.input<ContainerTypes>`
     `
     background-color: #333;
     color: #808080;
-    
+
     ::placeholder {
     color: #808080;
     }

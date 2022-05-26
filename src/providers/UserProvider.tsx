@@ -9,13 +9,15 @@ import {
 interface ContextTypes {
   user: UserTypes | null;
   loading: boolean;
-  login?: (value: { email: string; password: string }) => void;
-  logout?: () => void;
+  login: (value: { email: string; password: string }) => void;
+  logout: () => void;
 }
 
 export const UserContext = createContext<ContextTypes>({
   user: null,
-  loading: false,
+  loading: true,
+  login: () => '',
+  logout: () => '',
 });
 
 interface UserProviderTypes {
@@ -34,7 +36,7 @@ interface UserTypes {
 
 export const UserProvider = ({ children }: UserProviderTypes) => {
   const [user, setUser] = useState<UserTypes | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const login = ({ email, password }: LoginTypes) => {
     setUser({ email, password });
@@ -51,6 +53,12 @@ export const UserProvider = ({ children }: UserProviderTypes) => {
       const loggedUser = JSON.parse(getUser);
       login(loggedUser);
     }
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   }, []);
 
   return (

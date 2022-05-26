@@ -25,7 +25,8 @@ export const Login = () => {
 
   const handleSubmit = () => {
     console.log({ email, password });
-    return login ? login({ email, password }) : false;
+
+    login({ email, password });
   };
 
   return (
