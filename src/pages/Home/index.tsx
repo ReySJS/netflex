@@ -37,20 +37,21 @@ export const Home = () => {
     'Toda princesa tem seus deveres, mas ela quer mesmo é encher a cara. E com um elfo e um demônio como parceiros, levar o rei à loucura será uma tarefa fácil.',
   );
 
-  useEffect(() => {
+  async function getMovies() {
     try {
-      (async () => {
-        setLoading(true);
-        const { data } = await api.get('/movies');
-        setMovies(data);
-        console.log(data);
-        setTimeout(() => {
-          setLoading(false);
-        }, 3000);
-      })();
+      setLoading(true);
+      const { data } = await api.get<MovieTypes[]>('/movies');
+      setMovies(data);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  useEffect(() => {
+    getMovies();
   }, []);
 
   const handleMovie = ({ name, title, subtitle }: HandleMovieTypes) => {
