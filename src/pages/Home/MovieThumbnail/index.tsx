@@ -1,9 +1,9 @@
-import { MouseEventHandler } from 'react'
-import * as S from './styles'
+import { MouseEventHandler } from 'react';
+import * as S from './styles';
 
 interface PropTypes {
-  name: string
-  onClick: MouseEventHandler<HTMLDivElement>
+  name: string;
+  onClick: MouseEventHandler<HTMLDivElement>;
 }
 
 /**
@@ -17,5 +17,5 @@ interface PropTypes {
  */
 
 export const HomeMovieThumbnail = ({ name, onClick }: PropTypes) => {
-  return <S.Conteiner name={name} onClick={onClick}></S.Conteiner>
-}
+  return <S.Container name={name} onClick={onClick}></S.Container>;
+};

@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import BackgroundLogin from '../../assets/images/login-background.png'
+import BackgroundLogin from '../../assets/images/login-background.png';
 
-export const Conteiner = styled.section`
+export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -11,9 +11,9 @@ export const Conteiner = styled.section`
 
   background-image: url(${BackgroundLogin});
   background-size: cover;
-`
+`;
 
-export const Form = styled.div`
+export const Form = styled.form`
   width: 500px;
   height: 500px;
   max-width: 600px;
@@ -25,8 +25,8 @@ export const Form = styled.div`
   align-items: center;
 
   background-color: rgba(0, 0, 0, 0.8);
-`
+`;
 
 export const FormTitle = styled.h2`
   color: #fff;
-`
+`;

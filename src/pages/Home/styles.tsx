@@ -1,25 +1,25 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import DefaultBanner from '../../assets/images/default-banner-background.png'
-import AdamBanner from '../../assets/images/adam_project-banner-background.png'
-import MatrixBanner from '../../assets/images/matrix-banner-background.png'
-import LokiBanner from '../../assets/images/loki-banner-background.png'
-import BatmanBanner from '../../assets/images/the_batman-banner-background.png'
+import DefaultBanner from '../../assets/images/default-banner-background.png';
+import AdamBanner from '../../assets/images/adam_project-banner-background.png';
+import MatrixBanner from '../../assets/images/matrix-banner-background.png';
+import LokiBanner from '../../assets/images/loki-banner-background.png';
+import BatmanBanner from '../../assets/images/the_batman-banner-background.png';
 
-export const Conteiner = styled.section`
+export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-`
+`;
 
-interface ConteinerTypes {
-  name: string
+interface ContainerTypes {
+  name: string;
 }
 
-export const Banner = styled.div<ConteinerTypes>`
+export const Banner = styled.div<ContainerTypes>`
   width: 100vw;
   height: 70vh;
   display: flex;
@@ -31,7 +31,7 @@ export const Banner = styled.div<ConteinerTypes>`
   ${({ name }) => name === 'matrix' && `background-image: url(${MatrixBanner})`}
   ${({ name }) => name === 'loki' && `background-image: url(${LokiBanner})`}
   ${({ name }) => name === 'batman' && `background-image: url(${BatmanBanner})`}
-`
+`;
 
 export const Title = styled.h1`
   font-family: 'Newsreader';
@@ -39,7 +39,7 @@ export const Title = styled.h1`
   font-size: 60px;
 
   color: #ffffff;
-`
+`;
 
 export const Subtitle = styled.p`
   font-family: 'Montserrat';
@@ -47,7 +47,7 @@ export const Subtitle = styled.p`
   font-size: 20px;
 
   color: #ffffff;
-`
+`;
 
 export const Carrousel = styled.div`
   width: 100vw;
@@ -56,8 +56,8 @@ export const Carrousel = styled.div`
   align-items: center;
   justify-content: flex-end;
   background-color: #141414;
-`
+`;
 
 export const PageTitle = styled.h2`
   color: #fff;
-`
+`;

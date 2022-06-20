@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-interface ConteinerTypes {
-  mode?: string
+interface ContainerTypes {
+  mode?: string;
 }
 
-export const Input = styled.input<ConteinerTypes>`
+export const Container = styled.input<ContainerTypes>`
   height: 50px;
   width: 300px;
   padding-left: 30px;
@@ -27,9 +27,9 @@ export const Input = styled.input<ConteinerTypes>`
     `
     background-color: #333;
     color: #808080;
-    
+
     ::placeholder {
     color: #808080;
     }
-    `}
-`
+  `}
+`;
