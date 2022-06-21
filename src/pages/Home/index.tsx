@@ -65,7 +65,6 @@ export const Home = () => {
       <S.Banner name={selectedMovie}>
         <S.Title>{movieTitle}</S.Title>
         <S.Subtitle>{movieSubtitle}</S.Subtitle>
-        <button onClick={() => navigate('/profile')}>Perfil</button>
       </S.Banner>
       {loading ? (
         <h1>Carregando...</h1>

@@ -49,14 +49,6 @@ export const Router = () => (
         </Private>
       }
     />
-    <Route
-      path="/profile"
-      element={
-        <Private>
-          <h1>Perfil</h1>
-        </Private>
-      }
-    />
     <Route path="*" element={<h1>Error 404</h1>} />
   </Routes>
 );

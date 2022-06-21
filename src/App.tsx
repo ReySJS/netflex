@@ -9,8 +9,8 @@ export const App = () => {
   return (
     <UserProvider>
       <BrowserRouter>
-        <Router />
         <GlobalStyle />
+        <Router />
       </BrowserRouter>
     </UserProvider>
   );
